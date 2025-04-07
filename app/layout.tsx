@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Open_Sans } from "next/font/google";
 import "./globals.css";
+import { ContextProvider } from './context/ContextProvider';
 import { registerLicense } from '@syncfusion/ej2-base';
 
 registerLicense(process.env.NEXT_PUBLIC_EJ2_LICENSE_KEY || '');
@@ -25,7 +26,9 @@ export default function RootLayout({
       <body
         className={`${openSans.variable} antialiased`}
       >
-        {children}
+        <ContextProvider>
+         {children}
+        </ContextProvider>
       </body>
     </html>
   );

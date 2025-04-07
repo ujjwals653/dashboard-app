@@ -3,10 +3,11 @@ import './layout.css';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import { FiSettings } from 'react-icons/fi';
 import React from 'react';
-import Sidebar from '../ui/Sidebar';
+import { Sidebar, Navbar } from '../ui';
+import { useStateContext } from '../context/ContextProvider';
 
 const layout = ({ children }: { children: React.ReactNode }) => {
-  const activeMenu = true;
+  const { activeMenu } = useStateContext();
 	
 	return (
     <>
@@ -46,7 +47,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
 					}
 				>
 					<div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
-						Navbar
+						<Navbar />
 					</div>
 					{children}
       	</div>
