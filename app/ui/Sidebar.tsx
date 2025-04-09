@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { SiDash } from "react-icons/si";
 import { MdOutlineCancel } from 'react-icons/md'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-import { links } from '@/app/data/dummy.js';
+import { links } from '@/app/data/dummy';
 import { useStateContext } from '../context/ContextProvider';
 
 const Sidebar = () => {
@@ -12,7 +12,7 @@ const Sidebar = () => {
   const isActive = false;
 
   const activeLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white  text-md m-2';
-  const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2';
+  const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-gray-100 m-2';
 
   const handleSidebarClose = () => {
     if (activeMenu && screenWidth <= 900) {
@@ -30,7 +30,7 @@ const Sidebar = () => {
             <SiDash /> <span>Dashy</span>
           </Link>
           <TooltipComponent content='Menu' position='BottomCenter'>
-            <button 
+            <button
             className='text-xl rounded-full p-3 hover:bg-light-gray my-4 block md:hidden'
             onClick={() => setActiveMenu(false)}>
               <MdOutlineCancel />
@@ -38,7 +38,7 @@ const Sidebar = () => {
           </TooltipComponent>
         </div>
         <div className='mt-8'>
-          {links.map((item) => 
+          {links.map((item) =>
             <div key={item.title}>
               <p className='text-gray-400 m-3 mt-4 uppercase'>
               {item.title}

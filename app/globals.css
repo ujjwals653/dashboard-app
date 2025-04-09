@@ -5,3 +5,11 @@ body {
   margin: 0;
   padding: 0;
 }
+
+button {
+    cursor: pointer;
+}
+
+.bg-hero-pattern {
+    /* background-image: url('../public/bgImage.webp') !important; */
+}

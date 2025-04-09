@@ -7,7 +7,7 @@ import { RiNotification3Line } from 'react-icons/ri';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
-import avatar from '../data/avatar.jpg';
+import avatar from '@/public/avatars/avatar.jpg';
 import { Cart, Chat, Notification, UserProfile } from '.';
 import { useStateContext } from '../context/ContextProvider';
 
@@ -20,7 +20,7 @@ const Navbar = () => {
     } else {
       setActiveMenu(true);
     }
-  }, [])
+  }, [screenWidth, setActiveMenu]);
 
   return (
     <div className='flex justify-between p-2 md:mx-6 relative'>

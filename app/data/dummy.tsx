@@ -43,6 +43,7 @@ import product5 from "@/public/products/product5.jpg";
 import product6 from "@/public/products/product6.jpg";
 import product7 from "@/public/products/product7.jpg";
 import product8 from "@/public/products/product8.jpg";
+import { AxisModel } from "@syncfusion/ej2-react-charts";
 
 export const gridOrderImage = (props) => (
   <div>
@@ -400,7 +401,7 @@ export const LinePrimaryXAxis = {
   edgeLabelPlacement: "Shift",
   majorGridLines: { width: 0 },
   background: "white",
-};
+} as AxisModel;
 
 export const LinePrimaryYAxis = {
   labelFormat: "{value}%",
@@ -411,7 +412,7 @@ export const LinePrimaryYAxis = {
   lineStyle: { width: 0 },
   majorTickLines: { width: 0 },
   minorTickLines: { width: 0 },
-};
+} as AxisModel;
 
 export const customersGrid = [
   { type: "checkbox", width: "50" },
@@ -3083,7 +3084,7 @@ export const stackedPrimaryXAxis = {
   lineStyle: { width: 0 },
   labelIntersectAction: "Rotate45",
   valueType: "Category",
-};
+} as AxisModel;
 
 export const stackedPrimaryYAxis = {
   lineStyle: { width: 0 },

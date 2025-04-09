@@ -1,7 +1,7 @@
 'use client';
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
-interface ContextProps {
+type ContextProps = {
   activeMenu: boolean;
   setActiveMenu: (value: boolean) => void;
   isClicked: {
@@ -12,6 +12,10 @@ interface ContextProps {
   };
   handleClick: (clicked: string) => void;
   screenWidth: number;
+  currentColor: string;
+  setCurrentColor: (color: string) => void;
+  currentMode: 'Light' | 'Dark';
+  setCurrentMode: (mode: string) => void;
 }
 
 const initialState = {
@@ -27,12 +31,22 @@ const StateContext = createContext<ContextProps>({
   isClicked: initialState,
   handleClick: () => {},
   screenWidth: 0,
+  currentColor: 'blue',
+  setCurrentColor: () => {},
+  currentMode: 'Light',
+  setCurrentMode: () => {},
 });
 
 export const ContextProvider = ({ children }: { children: ReactNode }) => {
   const [activeMenu, setActiveMenu] = useState<boolean>(true);
   const [screenWidth, setScreenWidth] = useState<number>(0);
   const [isClicked, setIsClicked] = useState(initialState);
+  const [currentColor, setCurrentColor] = useState('blue');
+  const [currentMode, setCurrentMode] = useState<'Light' | 'Dark'>('Light');
+
+  const handleModeChange = (mode: string) => {
+    setCurrentMode(mode as 'Light' | 'Dark');
+  }
 
   useEffect(() => {
     const handleResize = () => setScreenWidth(window.innerWidth);
@@ -43,9 +57,9 @@ export const ContextProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   const handleClick = (clicked: string) => {
-    setIsClicked({ 
+    setIsClicked({
       ...initialState,
-      [clicked]: [!clicked]
+      [clicked]: !isClicked[clicked as keyof typeof isClicked]
     });
   };
 
@@ -55,43 +69,15 @@ export const ContextProvider = ({ children }: { children: ReactNode }) => {
       setActiveMenu,
       isClicked,
       handleClick,
-      screenWidth
+      screenWidth,
+      currentColor,
+      setCurrentColor,
+      currentMode,
+      setCurrentMode: handleModeChange
     }}>
       {children}
     </StateContext.Provider>
   )
 }
-
-interface ScreenContextType {
-  width: number;
-}
-
-const ScreenContext = createContext<ScreenContextType | null>(null);
-
-export const ScreenProvider = ({ children }: { children: React.ReactNode }) => {
-  const [width, setWidth] = useState<number>(0); // default to 0 to avoid SSR mismatch
-
-  useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-
-    handleResize(); // Set initial width
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return (
-    <ScreenContext.Provider value={{ width }}>
-      {children}
-    </ScreenContext.Provider>
-  );
-};
-
-export const useScreen = () => {
-  const context = useContext(ScreenContext);
-  if (!context) throw new Error("useScreen must be used within a ScreenProvider");
-  return context;
-};
-
 
 export const useStateContext = () => useContext(StateContext);
