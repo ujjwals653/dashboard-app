@@ -10,7 +10,7 @@ type FinancialChartData = {
   low: number;
 };
 
-const page = () => {
+const Page = () => {
   const { currentMode } = useStateContext();
 
   const date1 = new Date('2027-01-01');
@@ -53,4 +53,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

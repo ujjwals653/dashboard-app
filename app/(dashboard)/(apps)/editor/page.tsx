@@ -4,7 +4,7 @@ import { Header } from '@/app/ui';
 import { HtmlEditor, Image, Inject, Link, QuickToolbar, RichTextEditorComponent, Toolbar } from '@syncfusion/ej2-react-richtexteditor';
 import React from 'react';
 
-const page = () => {
+const Page = () => {
   return (
     <div className='m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl'>
       <Header category='App' title='Editor' />
@@ -16,4 +16,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

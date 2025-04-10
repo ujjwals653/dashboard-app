@@ -5,7 +5,7 @@ import { GridComponent, ColumnsDirective, ColumnDirective, Resize, Sort, Context
 import { ordersData, contextMenuItems, ordersGrid } from '@/app/data/dummy';
 import {Header} from '@/app/ui';
 
-const page = () => {
+const Page = () => {
   const editing = { allowEditing: true, allowDeleting: true };
 
   return (
@@ -30,4 +30,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

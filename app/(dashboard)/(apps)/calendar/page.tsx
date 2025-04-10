@@ -2,10 +2,11 @@
 import { scheduleData } from '@/app/data/dummy'
 import { Header } from '@/app/ui'
 import { DatePickerComponent } from '@syncfusion/ej2-react-calendars';
-import { Agenda, Day, DragAndDrop, Inject, Month, ScheduleComponent, Week, WorkWeek, Resize, ScheduleModel } from '@syncfusion/ej2-react-schedule'
+import { Agenda, Day, DragAndDrop, Inject, Month, ScheduleComponent, Week, WorkWeek, Resize } from '@syncfusion/ej2-react-schedule'
 import React from 'react'
 
-const page = () => {
+
+const Page = () => {
   const [schedule, setSchedule] = React.useState<ScheduleComponent | null>(null);
 
 
@@ -47,4 +48,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

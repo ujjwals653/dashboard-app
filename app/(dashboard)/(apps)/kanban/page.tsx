@@ -4,7 +4,7 @@ import { Header } from '@/app/ui'
 import { ColumnDirective, ColumnsDirective, KanbanComponent } from '@syncfusion/ej2-react-kanban'
 import React from 'react'
 
-const page = () => {
+const Page = () => {
   return (
     <div className='m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl'>
       <Header category='App' title='Kanban' />
@@ -25,4 +25,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

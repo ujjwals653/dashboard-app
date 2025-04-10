@@ -6,7 +6,7 @@ import React, { useEffect } from 'react';
 import { Sidebar, Navbar } from '../ui';
 import { useStateContext } from '../context/ContextProvider';
 
-const layout = ({ children }: { children: React.ReactNode }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   const { activeMenu } = useStateContext();
 
   useEffect(() => {
@@ -66,4 +66,4 @@ const layout = ({ children }: { children: React.ReactNode }) => {
   )
 }
 
-export default layout;
+export default Layout;

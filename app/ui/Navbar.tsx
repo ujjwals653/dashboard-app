@@ -1,5 +1,5 @@
 'use client';
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import { FiShoppingCart } from 'react-icons/fi';
 import { BsChatLeft } from 'react-icons/bs';
@@ -8,11 +8,11 @@ import { MdKeyboardArrowDown } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import avatar from '@/public/avatars/avatar.jpg';
-import { Cart, Chat, Notification, UserProfile } from '.';
+// import { Cart, Chat, Notification, UserProfile } from '.';
 import { useStateContext } from '../context/ContextProvider';
 
 const Navbar = () => {
-  const { activeMenu, setActiveMenu, screenWidth, handleClick, isClicked } = useStateContext();
+  const { activeMenu, setActiveMenu, screenWidth, handleClick } = useStateContext();
 
   useEffect(() => {
     if (screenWidth <= 900) {

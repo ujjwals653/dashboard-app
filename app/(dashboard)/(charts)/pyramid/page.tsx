@@ -5,7 +5,7 @@ import ChartsHeader from "@/app/ui/ChartsHeader"
 import { AccumulationChartComponent, AccumulationDataLabel, AccumulationLegend, AccumulationSelection, AccumulationSeriesCollectionDirective, AccumulationSeriesDirective, AccumulationTooltip, Inject, PyramidSeries } from "@syncfusion/ej2-react-charts"
 
 
-const page = () => {
+const Page = () => {
   const { currentMode } = useStateContext();
 
   return (
@@ -45,4 +45,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

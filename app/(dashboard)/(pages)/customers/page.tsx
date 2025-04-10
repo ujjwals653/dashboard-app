@@ -3,7 +3,7 @@ import { Header } from '@/app/ui'
 import { ColumnDirective, ColumnsDirective, Edit, Filter, GridComponent, Inject, Page, Sort, Toolbar } from '@syncfusion/ej2-react-grids'
 import React from 'react'
 
-const page = () => {
+const Page = () => {
   const selectionsettings = { persistSelection: true };
   const toolbarOptions = ['Delete'];
   const editing = { allowDeleting: true, allowEditing: true };
@@ -18,7 +18,7 @@ const page = () => {
         allowSorting
         allowSelection
         selectionSettings={selectionsettings}
-        pageSettings={{ pageCount: 5 }}
+        PageSettings={{ PageCount: 5 }}
         editSettings={editing}
         toolbar={toolbarOptions}
       >
@@ -31,4 +31,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

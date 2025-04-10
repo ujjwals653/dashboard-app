@@ -5,7 +5,7 @@ import { areaCustomSeries, areaPrimaryXAxis, areaPrimaryYAxis } from "@/app/data
 import ChartsHeader from "@/app/ui/ChartsHeader";
 import { ChartComponent, DateTime, Inject, Legend, SeriesCollectionDirective, SeriesDirective, SplineAreaSeries } from "@syncfusion/ej2-react-charts";
 
-const page = () => {
+const Page = () => {
   const { currentMode } = useStateContext();
 
   return (
@@ -32,4 +32,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

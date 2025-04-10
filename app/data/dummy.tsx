@@ -42,7 +42,6 @@ import product4 from "@/public/products/product4.jpg";
 import product5 from "@/public/products/product5.jpg";
 import product6 from "@/public/products/product6.jpg";
 import product7 from "@/public/products/product7.jpg";
-import product8 from "@/public/products/product8.jpg";
 import { AxisModel, RangeColorSettingModel } from "@syncfusion/ej2-react-charts";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { ContextMenuItem } from "@syncfusion/ej2-react-grids";

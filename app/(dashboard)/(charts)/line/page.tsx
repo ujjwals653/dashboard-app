@@ -3,7 +3,7 @@ import ChartsHeader from '@/app/ui/ChartsHeader';
 import { useStateContext } from '@/app/context/ContextProvider';
 import { LineChart } from '@/app/ui';
 
-const page = () => {
+const Page = () => {
   const { currentMode } = useStateContext();
 
   return (
@@ -16,4 +16,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

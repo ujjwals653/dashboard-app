@@ -5,7 +5,7 @@ import { colorMappingData, ColorMappingPrimaryXAxis, ColorMappingPrimaryYAxis, r
 import ChartsHeader from "@/app/ui/ChartsHeader";
 import { Category, ChartComponent, ColumnSeries, Inject, Legend, RangeColorSettingDirective, RangeColorSettingsDirective, SeriesCollectionDirective, SeriesDirective, Tooltip } from "@syncfusion/ej2-react-charts";
 
-const page = () => {
+const Page = () => {
   const { currentMode } = useStateContext();
 
   return (
@@ -44,4 +44,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

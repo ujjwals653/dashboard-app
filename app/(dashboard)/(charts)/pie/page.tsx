@@ -5,7 +5,7 @@ import { Pie as PieChart } from "@/app/ui"
 import ChartsHeader from "@/app/ui/ChartsHeader"
 
 
-const page = () => {
+const Page = () => {
   const { currentMode } = useStateContext();
 
   return (
@@ -18,4 +18,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
