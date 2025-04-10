@@ -44,18 +44,43 @@ import product6 from "@/public/products/product6.jpg";
 import product7 from "@/public/products/product7.jpg";
 import product8 from "@/public/products/product8.jpg";
 import { AxisModel } from "@syncfusion/ej2-react-charts";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { ContextMenuItem } from "@syncfusion/ej2-react-grids";
+import Image from "next/image";
 
-export const gridOrderImage = (props) => (
+type ImageProps = {
+  ProductImage: string | StaticImport;
+  EmployeeImage: string | StaticImport;
+  CustomerImage: string | StaticImport;
+  StatusBg?: string | number;
+  Status?: string;
+  Name?: string;
+  Country?: string;
+  CustomerName: string;
+  CustomerEmail: string;
+}
+
+export const gridOrderImage = (props: ImageProps) => (
   <div>
-    <img
-      className="rounded-xl h-20 md:ml-3"
-      src={props.ProductImage}
-      alt="order-item"
-    />
+    {typeof props.ProductImage === "object" ? (
+      <Image
+        width={0}
+        height={80}
+        src={props.ProductImage}
+        alt="order-img"
+        className="rounded-xl h-20 w-20 md:ml-3 bg-center bg-contain object-cover"
+      />
+    ) : (
+      <img
+        className="rounded-xl h-20 md:ml-3"
+        src={props.ProductImage}
+        alt="order-item"
+      />
+    )}
   </div>
 );
 
-export const gridOrderStatus = (props) => (
+export const gridOrderStatus = (props: ImageProps) => (
   <button
     type="button"
     style={{ background: props.StatusBg }}
@@ -79,7 +104,7 @@ export const kanbanGrid = [
 
   { headerText: "Done", keyField: "Close", allowToggle: true },
 ];
-const gridEmployeeProfile = (props) => (
+const gridEmployeeProfile = (props: ImageProps) => (
   <div className="flex items-center gap-2">
     <img
       className="rounded-full w-10 h-10"
@@ -90,7 +115,7 @@ const gridEmployeeProfile = (props) => (
   </div>
 );
 
-const gridEmployeeCountry = (props) => (
+const gridEmployeeCountry = (props: ImageProps) => (
   <div className="flex items-center justify-center gap-2">
     <GrLocation />
     <span>{props.Country}</span>
@@ -142,7 +167,7 @@ export const EditorData = () => (
     </h3>
   </div>
 );
-const customerGridImage = (props) => (
+const customerGridImage = (props: ImageProps) => (
   <div className="image flex gap-4">
     <img
       className="rounded-full w-10 h-10"
@@ -156,7 +181,7 @@ const customerGridImage = (props) => (
   </div>
 );
 
-const customerGridStatus = (props) => (
+const customerGridStatus = (props: ImageProps) => (
   <div className="flex gap-2 justify-center items-center text-gray-700 capitalize">
     <p
       style={{ background: props.StatusBg }}
@@ -3025,7 +3050,7 @@ export const contextMenuItems = [
   "PrevPage",
   "LastPage",
   "NextPage",
-];
+] as ContextMenuItem[];
 
 export const ecomPieChartData = [
   { x: "2018", y: 18, text: "35%" },

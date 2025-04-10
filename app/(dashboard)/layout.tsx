@@ -2,19 +2,29 @@
 import './layout.css';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import { FiSettings } from 'react-icons/fi';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Sidebar, Navbar } from '../ui';
 import { useStateContext } from '../context/ContextProvider';
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   const { activeMenu } = useStateContext();
-	
+
+  useEffect(() => {
+    const bodyDivs = document.querySelectorAll('body > div');
+    if (bodyDivs.length > 1) {
+      bodyDivs[1].remove();
+      if (!bodyDivs[bodyDivs.length - 1].classList.contains('flex')) {
+        bodyDivs[bodyDivs.length - 1].remove();
+      }
+    }
+  }, []);
+
 	return (
     <>
 			{/* Setting button at bottom right */}
       <div className='flex relative dark:bg-main-dark-bg'>
         <div className='fixed right-4 bottom-4 z-1000'>
-          <TooltipComponent 
+          <TooltipComponent
             content='settings'
             position='TopCenter'
           >
@@ -25,7 +35,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
             </button>
           </TooltipComponent>
         </div>
-				
+
 				{/* Positioning the Sidebar Component */}
 				{activeMenu ? (
 					<div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white ">

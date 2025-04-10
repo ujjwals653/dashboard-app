@@ -4,7 +4,7 @@ import "./globals.css";
 import { ContextProvider } from './context/ContextProvider';
 import { registerLicense } from '@syncfusion/ej2-base';
 
-registerLicense('Ngo9BigBOggjHTQxAR8/V1NMaF5cXmBCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdmWXteeXVWQ2ZdVkV1XERWYUE=');
+registerLicense(process.env.NEXT_PUBLIC_EJ2_LICENSE_KEY || '');
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
