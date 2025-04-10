@@ -43,7 +43,7 @@ import product5 from "@/public/products/product5.jpg";
 import product6 from "@/public/products/product6.jpg";
 import product7 from "@/public/products/product7.jpg";
 import product8 from "@/public/products/product8.jpg";
-import { AxisModel } from "@syncfusion/ej2-react-charts";
+import { AxisModel, RangeColorSettingModel } from "@syncfusion/ej2-react-charts";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { ContextMenuItem } from "@syncfusion/ej2-react-grids";
 import Image from "next/image";
@@ -199,7 +199,7 @@ export const areaPrimaryXAxis = {
   intervalType: "Years",
   edgeLabelPlacement: "Shift",
   labelStyle: { color: "gray" },
-};
+} as AxisModel;
 
 export const areaPrimaryYAxis = {
   labelFormat: "{value}%",
@@ -209,18 +209,21 @@ export const areaPrimaryYAxis = {
   majorTickLines: { width: 0 },
   minorTickLines: { width: 0 },
   labelStyle: { color: "gray" },
-};
+} as AxisModel;
+
 export const barPrimaryXAxis = {
   valueType: "Category",
   interval: 1,
   majorGridLines: { width: 0 },
-};
+} as AxisModel;
+
 export const barPrimaryYAxis = {
   majorGridLines: { width: 0 },
   majorTickLines: { width: 0 },
   lineStyle: { width: 0 },
   labelStyle: { color: "transparent" },
-};
+} as AxisModel;
+
 const areaChartData = [
   [
     { x: new Date(2002, 0, 1), y: 2.2 },
@@ -373,28 +376,28 @@ export const colorMappingData = [
 ];
 
 export const rangeColorMapping = [
-  { label: "1°C to 10°C", start: "1", end: "10", colors: colorMappingData[1] },
+  { label: "1°C to 10°C", start: 1, end: 10, colors: colorMappingData[1] },
 
   {
     label: "11°C to 20°C",
-    start: "11",
-    end: "20",
+    start: 11,
+    end: 20,
     colors: colorMappingData[2],
   },
 
   {
     label: "21°C to 30°C",
-    start: "21",
-    end: "30",
+    start: 21,
+    end: 30,
     colors: colorMappingData[3],
   },
-];
+] as RangeColorSettingModel[];
 
 export const ColorMappingPrimaryXAxis = {
   valueType: "Category",
   majorGridLines: { width: 0 },
   title: "Months",
-};
+} as AxisModel;
 
 export const ColorMappingPrimaryYAxis = {
   lineStyle: { width: 0 },
@@ -402,7 +405,7 @@ export const ColorMappingPrimaryYAxis = {
   minorTickLines: { width: 0 },
   labelFormat: "{value}°C",
   title: "Temperature",
-};
+} as AxisModel;
 
 export const FinancialPrimaryXAxis = {
   valueType: "DateTime",
@@ -410,7 +413,7 @@ export const FinancialPrimaryXAxis = {
   maximum: new Date("2017, 9, 30"),
   crosshairTooltip: { enable: true },
   majorGridLines: { width: 0 },
-};
+} as AxisModel;
 
 export const FinancialPrimaryYAxis = {
   title: "Price",
@@ -419,7 +422,7 @@ export const FinancialPrimaryYAxis = {
   interval: 20,
   lineStyle: { width: 0 },
   majorTickLines: { width: 0 },
-};
+} as AxisModel;
 
 export const LinePrimaryXAxis = {
   valueType: "DateTime",
