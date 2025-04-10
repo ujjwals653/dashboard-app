@@ -17,7 +17,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
         bodyDivs[bodyDivs.length - 1].remove();
       }
     }
-  }, []);
+  });
 
 	return (
     <>
