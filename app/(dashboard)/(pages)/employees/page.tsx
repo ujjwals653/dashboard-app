@@ -1,7 +1,7 @@
 'use client';
 import { employeesData, employeesGrid } from '@/app/data/dummy'
 import { Header } from '@/app/ui'
-import { ColumnDirective, ColumnsDirective, GridComponent, Inject, Page, Search, Sort, Toolbar } from '@syncfusion/ej2-react-grids'
+import { ColumnDirective, ColumnsDirective, GridComponent, Inject, Page as P, Search, Sort, Toolbar } from '@syncfusion/ej2-react-grids'
 import React from 'react'
 
 const Page = () => {
@@ -16,14 +16,14 @@ const Page = () => {
         width='auto'
         allowPaging
         allowSorting
-        PageSettings={{ PageCount: 5 }}
+        pageSettings={{ pageCount: 5 }}
         editSettings={editing}
         toolbar={toolbarOptions}
       >
         <ColumnsDirective>
           {employeesGrid.map((item, index) => <ColumnDirective key={index} {...item} />)}
         </ColumnsDirective>
-        <Inject services={[Search, Page, Sort, Toolbar]} />
+        <Inject services={[Search, P, Sort, Toolbar]} />
       </GridComponent>
     </div>
   )

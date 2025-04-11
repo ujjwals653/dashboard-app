@@ -140,7 +140,7 @@ const Ecommerce = () => {
             </div>
 
             <div className="w-40">
-              <Pie id="pie-chart" data={ecomPieChartData} legendVisiblity={false} height="160px" />
+              <Pie id="pie-chart" data={ecomPieChartData} legendVisiblity={false} height="160px" currentMode={currentMode} />
             </div>
           </div>
         </div>

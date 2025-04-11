@@ -1,6 +1,7 @@
+'use client';
 import { customersData, customersGrid } from '@/app/data/dummy'
 import { Header } from '@/app/ui'
-import { ColumnDirective, ColumnsDirective, Edit, Filter, GridComponent, Inject, Page, Sort, Toolbar } from '@syncfusion/ej2-react-grids'
+import { ColumnDirective, ColumnsDirective, Edit, Filter, GridComponent, Inject, Page as P, Sort, Toolbar, Selection } from '@syncfusion/ej2-react-grids'
 import React from 'react'
 
 const Page = () => {
@@ -10,7 +11,7 @@ const Page = () => {
 
   return (
     <div className='m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl'>
-      <Header category='Page' title='Employees' />
+      <Header category='Page' title='Customers' />
       <GridComponent
         dataSource={customersData}
         width='auto'
@@ -18,14 +19,14 @@ const Page = () => {
         allowSorting
         allowSelection
         selectionSettings={selectionsettings}
-        PageSettings={{ PageCount: 5 }}
+        pageSettings={{ pageCount: 5 }}
         editSettings={editing}
         toolbar={toolbarOptions}
       >
         <ColumnsDirective>
           {customersGrid.map((item, index) => <ColumnDirective key={index} {...item} />)}
         </ColumnsDirective>
-        <Inject services={[Page, Sort, Toolbar, Selection, Edit, Filter]} />
+        <Inject services={[P, Sort, Toolbar, Selection, Edit, Filter]} />
       </GridComponent>
     </div>
   )

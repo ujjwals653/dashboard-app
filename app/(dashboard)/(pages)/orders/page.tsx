@@ -1,6 +1,6 @@
 'use client';
 import React from 'react'
-import { GridComponent, ColumnsDirective, ColumnDirective, Resize, Sort, ContextMenu, Filter, Page, ExcelExport, PdfExport, Edit, Inject } from '@syncfusion/ej2-react-grids';
+import { GridComponent, ColumnsDirective, ColumnDirective, Resize, Sort, ContextMenu, Filter, Page as P, ExcelExport, PdfExport, Edit, Inject } from '@syncfusion/ej2-react-grids';
 
 import { ordersData, contextMenuItems, ordersGrid } from '@/app/data/dummy';
 import {Header} from '@/app/ui';
@@ -24,7 +24,7 @@ const Page = () => {
         <ColumnsDirective>
           {ordersGrid.map((item, index) => <ColumnDirective key={index} {...item} />)}
         </ColumnsDirective>
-        <Inject services={[Resize, Sort, ContextMenu, Filter, Page, ExcelExport, PdfExport, Edit]} />
+        <Inject services={[Resize, Sort, ContextMenu, Filter, P, ExcelExport, PdfExport, Edit]} />
       </GridComponent>
     </div>
   )

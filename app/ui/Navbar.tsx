@@ -10,6 +10,7 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import avatar from '@/public/avatars/avatar.jpg';
 // import { Cart, Chat, Notification, UserProfile } from '.';
 import { useStateContext } from '../context/ContextProvider';
+import Image from 'next/image';
 
 const Navbar = () => {
   const { activeMenu, setActiveMenu, screenWidth, handleClick } = useStateContext();
@@ -56,8 +57,10 @@ const Navbar = () => {
           <div className='flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg text-gray-400 text-14'
             onClick={() => handleClick('userProfile')}
           >
-            <img
-              src={avatar.src}
+            <Image
+            height={0}
+            width={0}
+            src={avatar.src}
               alt="User"
               className='rounded-full w-8 h-8'
             />

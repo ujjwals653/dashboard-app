@@ -170,8 +170,10 @@ export const EditorData = () => (
 );
 const customerGridImage = (props: ImageProps) => (
   <div className="image flex gap-4">
-    <img
-      className="rounded-full w-10 h-10"
+    <Image
+      height={40}
+      width={40}
+      className="rounded-full"
       src={props.CustomerImage}
       alt="employee"
     />
