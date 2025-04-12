@@ -1,11 +1,13 @@
-import React from "react";
+import React, { ReactElement } from "react";
 
 interface ButtonProps {
+  icon?: ReactElement;
   bgColor?: string;
   color?: string;
   size?: "sm" | "md" | "lg";
   text?: string;
   borderRadius?: string;
+  width?: string;
   onClick?: () => void;
 }
 
@@ -16,11 +18,13 @@ const sizeStyles: Record<"sm" | "md" | "lg", React.CSSProperties> = {
 };
 
 const Button: React.FC<ButtonProps> = ({
+  icon,
   bgColor = "#3498db",
   color = "#ffffff",
   size = "md",
   text = "Click Me",
   borderRadius = "6px",
+  width,
   onClick,
 }) => {
   return (
@@ -32,11 +36,12 @@ const Button: React.FC<ButtonProps> = ({
         border: "none",
         cursor: "pointer",
         borderRadius: borderRadius,
+        width: width,
         ...sizeStyles[size],
       }}
       className="hover:drop-shadow-xl"
     >
-      {text}
+      {icon} {text}
     </button>
   );
 };

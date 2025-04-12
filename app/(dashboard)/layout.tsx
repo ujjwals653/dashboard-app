@@ -8,7 +8,7 @@ import { useStateContext } from '../context/ContextProvider';
 import ThemeSettings from '../ui/ThemeSettings';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  const { activeMenu, themeSettings, currentMode, setCurrentMode, setCurrentColor, setThemeSettings } = useStateContext();
+  const { activeMenu, themeSettings, currentMode, setCurrentMode, setCurrentColor, setThemeSettings, currentColor } = useStateContext();
 
   useEffect(() => {
     const bodyDivs = document.querySelectorAll('body > div');
@@ -42,7 +42,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           >
             <button
               type='button'
-              className={`text-xl text-white p-3 hover:drop-shadow-xl hover:bg-light-gray bg-blue-600 rounded-full`}
+              style={{backgroundColor: currentColor}}
+              className={`text-xl text-white p-3 hover:drop-shadow-xl hover:bg-light-gray rounded-full`}
               onClick={() => setThemeSettings(true)}
             >
               <FiSettings />

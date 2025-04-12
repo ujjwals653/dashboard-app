@@ -20,6 +20,8 @@ type ContextProps = {
   setThemeSettings: (value: boolean) => void;
   setMode: (e: React.ChangeEvent<HTMLInputElement>) => void;
   setColor: (color: string) => void;
+  setIsClicked: Dispatch<SetStateAction<typeof initialState>>;
+  initialState: typeof initialState;
 }
 
 const initialState = {
@@ -43,6 +45,8 @@ const StateContext = createContext<ContextProps>({
   setThemeSettings: () => {},
   setMode: () => {},
   setColor: () => {},
+  setIsClicked: () => {},
+  initialState: initialState,
 });
 
 export const ContextProvider = ({ children }: { children: ReactNode }) => {
@@ -82,7 +86,8 @@ export const ContextProvider = ({ children }: { children: ReactNode }) => {
     <StateContext.Provider value={{
       activeMenu,
       setActiveMenu,
-      isClicked,
+      isClicked, setIsClicked,
+      initialState,
       handleClick,
       screenWidth,
       currentColor, setCurrentColor,
