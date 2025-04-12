@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useStateContext } from '@/app/context/ContextProvider';
+import { useStateContext } from '@/context/ContextProvider';
 
 interface ButtonProps {
   icon?: React.ReactNode;

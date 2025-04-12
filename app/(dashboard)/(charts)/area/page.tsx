@@ -1,8 +1,8 @@
 'use client';
 
-import { useStateContext } from "@/app/context/ContextProvider";
-import { areaCustomSeries, areaPrimaryXAxis, areaPrimaryYAxis } from "@/app/data/dummy";
-import ChartsHeader from "@/app/ui/ChartsHeader";
+import { useStateContext } from "@/context/ContextProvider";
+import { areaCustomSeries, areaPrimaryXAxis, areaPrimaryYAxis } from "@/data/dummy";
+import ChartsHeader from "@/components/ui/ChartsHeader";
 import { ChartComponent, DateTime, Inject, Legend, SeriesCollectionDirective, SeriesDirective, SplineAreaSeries } from "@syncfusion/ej2-react-charts";
 
 const Page = () => {

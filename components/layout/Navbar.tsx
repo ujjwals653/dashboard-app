@@ -8,8 +8,8 @@ import { MdKeyboardArrowDown } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import avatar from '@/public/avatars/avatar.jpg';
-import { Cart, Chat, Notification, UserProfile } from '.';
-import { useStateContext } from '../context/ContextProvider';
+import { Cart, Chat, Notification, UserProfile } from '..';
+import { useStateContext } from '../../context/ContextProvider';
 import Image from 'next/image';
 
 const Navbar = () => {

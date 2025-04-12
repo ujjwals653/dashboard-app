@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { SiDash } from "react-icons/si";
 import { MdOutlineCancel } from 'react-icons/md'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-import { links } from '@/app/data/dummy';
-import { useStateContext } from '../context/ContextProvider';
+import { links } from '@/data/dummy';
+import { useStateContext } from '../../context/ContextProvider';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 

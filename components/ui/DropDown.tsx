@@ -1,6 +1,6 @@
 'use client';
 import { DropDownListComponent } from "@syncfusion/ej2-react-dropdowns";
-import { dropdownData } from '@/app/data/dummy';
+import { dropdownData } from '@/data/dummy';
 
 const DropDown = ({ currentMode }: { currentMode: 'Light' | 'Dark' }) => {
   return (

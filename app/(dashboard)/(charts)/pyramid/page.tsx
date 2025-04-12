@@ -1,7 +1,7 @@
 'use client';
-import { useStateContext } from "@/app/context/ContextProvider";
-import { PyramidData } from "@/app/data/dummy"
-import ChartsHeader from "@/app/ui/ChartsHeader"
+import { useStateContext } from "@/context/ContextProvider";
+import { PyramidData } from "@/data/dummy"
+import ChartsHeader from "@/components/ui/ChartsHeader"
 import { AccumulationChartComponent, AccumulationDataLabel, AccumulationLegend, AccumulationSelection, AccumulationSeriesCollectionDirective, AccumulationSeriesDirective, AccumulationTooltip, Inject, PyramidSeries } from "@syncfusion/ej2-react-charts"
 
 

@@ -3,8 +3,8 @@ import React from 'react';
 import { MdOutlineCancel } from 'react-icons/md';
 
 import Button from './Button';
-import { userProfileData } from '@/app/data/dummy';
-import { useStateContext } from '@/app/context/ContextProvider';
+import { userProfileData } from '@/data/dummy';
+import { useStateContext } from '@/context/ContextProvider';
 import avatar from '@/public/avatars/avatar.jpg';
 import Image from 'next/image';
 

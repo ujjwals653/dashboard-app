@@ -1,6 +1,6 @@
 'use client';
-import { kanbanData, kanbanGrid } from '@/app/data/dummy'
-import { Header } from '@/app/ui'
+import { kanbanData, kanbanGrid } from '@/data/dummy'
+import { Header } from '@/components'
 import { ColumnDirective, ColumnsDirective, KanbanComponent } from '@syncfusion/ej2-react-kanban'
 import React from 'react'
 

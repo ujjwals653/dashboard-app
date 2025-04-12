@@ -1,5 +1,5 @@
 'use client';
-import { lineCustomSeries, LinePrimaryXAxis, LinePrimaryYAxis } from '@/app/data/dummy';
+import { lineCustomSeries, LinePrimaryXAxis, LinePrimaryYAxis } from '@/data/dummy';
 import { ChartComponent, DateTime, Inject, Legend, LineSeries, SeriesCollectionDirective, SeriesDirective, Tooltip } from '@syncfusion/ej2-react-charts';
 import React from 'react'
 

@@ -1,5 +1,5 @@
 'use client';
-import { Header } from '@/app/ui';
+import { Header } from '@/components';
 import { ColorPickerComponent, ColorPickerEventArgs, ColorPickerMode } from '@syncfusion/ej2-react-inputs';
 import React from 'react'
 

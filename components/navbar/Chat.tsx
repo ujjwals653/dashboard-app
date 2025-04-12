@@ -3,8 +3,8 @@ import React from 'react';
 import { MdOutlineCancel } from 'react-icons/md';
 
 import Button from './Button';
-import { chatData } from '@/app/data/dummy';
-import { useStateContext } from '@/app/context/ContextProvider';
+import { chatData } from '@/data/dummy';
+import { useStateContext } from '@/context/ContextProvider';
 import Image from 'next/image';
 
 const Chat = () => {

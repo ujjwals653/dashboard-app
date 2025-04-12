@@ -4,9 +4,9 @@ import { BsCurrencyDollar } from 'react-icons/bs';
 import { GoDotFill } from 'react-icons/go';
 import { IoIosMore } from 'react-icons/io';
 
-import { Stacked, Pie, Button, LineChart, SparkLine, DropDown } from '@/app/ui';
-import { earningData, medicalproBranding, recentTransactions, weeklyStats, SparklineAreaData, ecomPieChartData } from '@/app/data/dummy';
-import { useStateContext } from '@/app/context/ContextProvider';
+import { Stacked, Pie, Button, LineChart, SparkLine, DropDown } from '@/components';
+import { earningData, medicalproBranding, recentTransactions, weeklyStats, SparklineAreaData, ecomPieChartData } from '@/data/dummy';
+import { useStateContext } from '@/context/ContextProvider';
 import product9 from '@/public/products/product9.jpg';
 import Image from 'next/image';
 

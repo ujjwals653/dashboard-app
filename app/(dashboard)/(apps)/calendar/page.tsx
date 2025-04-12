@@ -1,6 +1,6 @@
 'use client';
-import { scheduleData } from '@/app/data/dummy'
-import { Header } from '@/app/ui'
+import { scheduleData } from '@/data/dummy'
+import { Header } from '@/components'
 import { DatePickerComponent } from '@syncfusion/ej2-react-calendars';
 import { Agenda, Day, DragAndDrop, Inject, Month, ScheduleComponent, Week, WorkWeek, Resize } from '@syncfusion/ej2-react-schedule'
 import React from 'react'

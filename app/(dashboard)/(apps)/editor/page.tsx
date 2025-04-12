@@ -1,6 +1,6 @@
 'use client';
-import { EditorData } from '@/app/data/dummy';
-import { Header } from '@/app/ui';
+import { EditorData } from '@/data/dummy';
+import { Header } from '@/components';
 import { HtmlEditor, Image, Inject, Link, QuickToolbar, RichTextEditorComponent, Toolbar } from '@syncfusion/ej2-react-richtexteditor';
 import React from 'react';
 

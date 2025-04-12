@@ -1,5 +1,5 @@
 'use client';
-import { stackedCustomSeries, stackedPrimaryXAxis, stackedPrimaryYAxis } from '@/app/data/dummy';
+import { stackedCustomSeries, stackedPrimaryXAxis, stackedPrimaryYAxis } from '@/data/dummy';
 import { Category, ChartComponent, Inject, Legend, SeriesCollectionDirective, SeriesDirective, StackingColumnSeries, Tooltip } from '@syncfusion/ej2-react-charts';
 import React from 'react'
 

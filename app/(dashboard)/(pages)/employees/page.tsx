@@ -1,6 +1,6 @@
 'use client';
-import { employeesData, employeesGrid } from '@/app/data/dummy'
-import { Header } from '@/app/ui'
+import { employeesData, employeesGrid } from '@/data/dummy'
+import { Header } from '@/components'
 import { ColumnDirective, ColumnsDirective, GridComponent, Inject, Page as P, Search, Sort, Toolbar } from '@syncfusion/ej2-react-grids'
 import React from 'react'
 

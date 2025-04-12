@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import { registerLicense } from '@syncfusion/ej2-base';
-import { ContextProvider } from "./context/ContextProvider";
+import { ContextProvider } from "../context/ContextProvider";
 
 registerLicense(process.env.NEXT_PUBLIC_EJ2_LICENSE_KEY || '');
 

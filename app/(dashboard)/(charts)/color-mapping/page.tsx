@@ -1,8 +1,8 @@
 'use client';
 
-import { useStateContext } from "@/app/context/ContextProvider";
-import { colorMappingData, ColorMappingPrimaryXAxis, ColorMappingPrimaryYAxis, rangeColorMapping } from "@/app/data/dummy";
-import ChartsHeader from "@/app/ui/ChartsHeader";
+import { useStateContext } from "@/context/ContextProvider";
+import { colorMappingData, ColorMappingPrimaryXAxis, ColorMappingPrimaryYAxis, rangeColorMapping } from "@/data/dummy";
+import ChartsHeader from "@/components/ui/ChartsHeader";
 import { Category, ChartComponent, ColumnSeries, Inject, Legend, RangeColorSettingDirective, RangeColorSettingsDirective, SeriesCollectionDirective, SeriesDirective, Tooltip } from "@syncfusion/ej2-react-charts";
 
 const Page = () => {

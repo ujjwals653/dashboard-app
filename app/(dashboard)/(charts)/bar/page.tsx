@@ -2,9 +2,9 @@
 import React from 'react';
 import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, Legend, Category, Tooltip, ColumnSeries, DataLabel } from '@syncfusion/ej2-react-charts';
 
-import { barCustomSeries, barPrimaryXAxis, barPrimaryYAxis } from '@/app/data/dummy';
-import ChartsHeader from '@/app/ui/ChartsHeader';
-import { useStateContext } from '@/app/context/ContextProvider';
+import { barCustomSeries, barPrimaryXAxis, barPrimaryYAxis } from '@/data/dummy';
+import ChartsHeader from '@/components/ui/ChartsHeader';
+import { useStateContext } from '@/context/ContextProvider';
 
 const Bar = () => {
   const { currentMode } = useStateContext();

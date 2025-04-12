@@ -1,7 +1,7 @@
 'use client';
-import { useStateContext } from "@/app/context/ContextProvider";
-import { financialChartData, FinancialPrimaryXAxis, FinancialPrimaryYAxis } from "@/app/data/dummy";
-import ChartsHeader from "@/app/ui/ChartsHeader"
+import { useStateContext } from "@/context/ContextProvider";
+import { financialChartData, FinancialPrimaryXAxis, FinancialPrimaryYAxis } from "@/data/dummy";
+import ChartsHeader from "@/components/ui/ChartsHeader"
 import { ChartComponent, Crosshair, DateTime, HiloSeries, Inject, Logarithmic, SeriesCollectionDirective, SeriesDirective, Tooltip, Zoom } from "@syncfusion/ej2-react-charts";
 
 type FinancialChartData = {

@@ -3,9 +3,9 @@ import './layout.css';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import { FiSettings } from 'react-icons/fi';
 import React, { useEffect } from 'react';
-import { Sidebar, Navbar } from '../ui';
-import { useStateContext } from '../context/ContextProvider';
-import ThemeSettings from '../ui/ThemeSettings';
+import { Sidebar, Navbar } from '@/components';
+import { useStateContext } from '@/context/ContextProvider';
+import ThemeSettings from '@/components/layout/ThemeSettings';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const { activeMenu, themeSettings, currentMode, setCurrentMode, setCurrentColor, setThemeSettings, currentColor } = useStateContext();

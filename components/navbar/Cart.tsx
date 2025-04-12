@@ -2,8 +2,8 @@ import React from 'react';
 import { MdOutlineCancel } from 'react-icons/md';
 import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 
-import { useStateContext } from '@/app/context/ContextProvider';
-import { cartData } from '@/app/data/dummy';
+import { useStateContext } from '@/context/ContextProvider';
+import { cartData } from '@/data/dummy';
 import Button from './Button';
 import Image from 'next/image';
 

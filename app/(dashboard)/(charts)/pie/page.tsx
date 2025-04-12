@@ -1,8 +1,8 @@
 'use client';
-import { useStateContext } from "@/app/context/ContextProvider"
-import { pieChartData } from "@/app/data/dummy"
-import { Pie as PieChart } from "@/app/ui"
-import ChartsHeader from "@/app/ui/ChartsHeader"
+import { useStateContext } from "@/context/ContextProvider"
+import { pieChartData } from "@/data/dummy"
+import { Pie as PieChart } from "@/components"
+import ChartsHeader from "@/components/ui/ChartsHeader"
 
 
 const Page = () => {

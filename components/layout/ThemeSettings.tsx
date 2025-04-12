@@ -3,8 +3,8 @@ import React from 'react';
 import { MdOutlineCancel } from 'react-icons/md';
 import { BsCheck } from 'react-icons/bs';
 
-import { themeColors } from '@/app/data/dummy';
-import { useStateContext } from '@/app/context/ContextProvider';
+import { themeColors } from '@/data/dummy';
+import { useStateContext } from '@/context/ContextProvider';
 
 const ThemeSettings = () => {
   const { setColor, setMode, currentMode, currentColor, setThemeSettings } = useStateContext();

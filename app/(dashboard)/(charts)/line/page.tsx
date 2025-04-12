@@ -1,7 +1,7 @@
 'use client';
-import ChartsHeader from '@/app/ui/ChartsHeader';
-import { useStateContext } from '@/app/context/ContextProvider';
-import { LineChart } from '@/app/ui';
+import ChartsHeader from '@/components/ui/ChartsHeader';
+import { useStateContext } from '@/context/ContextProvider';
+import { LineChart } from '@/components';
 
 const Page = () => {
   const { currentMode } = useStateContext();

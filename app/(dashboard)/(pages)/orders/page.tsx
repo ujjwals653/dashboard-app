@@ -2,8 +2,8 @@
 import React from 'react'
 import { GridComponent, ColumnsDirective, ColumnDirective, Resize, Sort, ContextMenu, Filter, Page as P, ExcelExport, PdfExport, Edit, Inject } from '@syncfusion/ej2-react-grids';
 
-import { ordersData, contextMenuItems, ordersGrid } from '@/app/data/dummy';
-import {Header} from '@/app/ui';
+import { ordersData, contextMenuItems, ordersGrid } from '@/data/dummy';
+import {Header} from '@/components';
 
 const Page = () => {
   const editing = { allowEditing: true, allowDeleting: true };
