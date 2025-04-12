@@ -19,6 +19,7 @@
     "@syncfusion/ej2-react-popups": "^29.1.37",
     "@syncfusion/ej2-react-richtexteditor": "^29.1.37",
     "@syncfusion/ej2-react-schedule": "^29.1.37",
+    "clsx": "^2.1.1",
     "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

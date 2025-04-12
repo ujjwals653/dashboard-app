@@ -8,12 +8,12 @@ import { MdKeyboardArrowDown } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import avatar from '@/public/avatars/avatar.jpg';
-// import { Cart, Chat, Notification, UserProfile } from '.';
+import { Cart, Chat, Notification, UserProfile } from '.';
 import { useStateContext } from '../context/ContextProvider';
 import Image from 'next/image';
 
 const Navbar = () => {
-  const { activeMenu, setActiveMenu, screenWidth, handleClick } = useStateContext();
+  const { activeMenu, setActiveMenu, screenWidth, handleClick, isClicked, currentColor } = useStateContext();
 
   useEffect(() => {
     if (screenWidth <= 900) {
@@ -28,26 +28,26 @@ const Navbar = () => {
       <NavButton
         title='Menu'
         customFunc={() => setActiveMenu(!activeMenu)}
-        color='blue'
+        color={currentColor}
         icon={<AiOutlineMenu />}
       />
       <div className='flex'>
         <NavButton
           title='Cart'
           customFunc={() => handleClick('cart')}
-          color='blue'
+          color={currentColor}
           icon={<FiShoppingCart />}
         />
         <NavButton
           title='Chat'
           customFunc={() => handleClick('chat')}
-          color='blue'
+          color={currentColor}
           icon={<BsChatLeft />}
         />
         <NavButton
           title='Notification'
           customFunc={() => handleClick('notification')}
-          color='blue'
+          color={currentColor}
           icon={<RiNotification3Line />}
         />
         <TooltipComponent
@@ -71,6 +71,11 @@ const Navbar = () => {
             <MdKeyboardArrowDown />
           </div>
         </TooltipComponent>
+
+        {isClicked.cart && (<Cart />)}
+        {isClicked.chat && (<Chat />)}
+        {isClicked.notification && (<Notification />)}
+        {isClicked.userProfile && (<UserProfile />)}
       </div>
     </div>
   )

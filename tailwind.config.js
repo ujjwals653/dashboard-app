@@ -1,6 +1,6 @@
-module.exports = {
+export default tailwindConfig = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
-  darkMode: 'class',
+  darkMode: ['selector', '[data-theme="dark"]'],
   theme: {
     fontFamily: {
       display: ['Open Sans', 'sans-serif'],
@@ -39,10 +39,9 @@ module.exports = {
         590: '590px',
       },
       backgroundImage: {
-        'hero-pattern':
-          "url('./public/bgImage.webp')",
+        'hero-pattern': "url('/bgImage.webp')",
       },
     },
   },
   plugins: [],
-};
+}

@@ -622,10 +622,6 @@ export const links = [
         name: "pyramid",
         icon: <GiLouvrePyramid />,
       },
-      {
-        name: "stacked",
-        icon: <AiOutlineBarChart />,
-      },
     ],
   },
 ];

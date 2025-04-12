@@ -1,6 +1,14 @@
 @import "tailwindcss";
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
+@theme {
+    --color-main-dark-bg: #20232A;
+    --color-main-bg: #FAFBFB;
+    --color-secondary-dark-bg: #33373E;
+    --color-light-gray: #F7F7F7;
+    --color-half-transparent: rgba(0, 0, 0, 0.5);
+}
+
 body {
   margin: 0;
   padding: 0;

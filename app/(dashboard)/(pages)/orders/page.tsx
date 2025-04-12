@@ -17,7 +17,7 @@ const Page = () => {
         allowPaging
         allowSorting
         allowExcelExport
-        // allowPdfExport
+        allowPdfExport
         contextMenuItems={contextMenuItems}
         editSettings={editing}
       >

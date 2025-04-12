@@ -1,5 +1,5 @@
 'use client';
-import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, ReactNode, Dispatch, SetStateAction } from "react";
 
 type ContextProps = {
   activeMenu: boolean;
@@ -15,7 +15,11 @@ type ContextProps = {
   currentColor: string;
   setCurrentColor: (color: string) => void;
   currentMode: 'Light' | 'Dark';
-  setCurrentMode: (mode: string) => void;
+  setCurrentMode: Dispatch<SetStateAction<'Light' | 'Dark'>>;
+  themeSettings: boolean;
+  setThemeSettings: (value: boolean) => void;
+  setMode: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  setColor: (color: string) => void;
 }
 
 const initialState = {
@@ -31,22 +35,33 @@ const StateContext = createContext<ContextProps>({
   isClicked: initialState,
   handleClick: () => {},
   screenWidth: 0,
-  currentColor: 'blue',
+  currentColor: '#03C9D7',
   setCurrentColor: () => {},
   currentMode: 'Light',
   setCurrentMode: () => {},
+  themeSettings: false,
+  setThemeSettings: () => {},
+  setMode: () => {},
+  setColor: () => {},
 });
 
 export const ContextProvider = ({ children }: { children: ReactNode }) => {
   const [activeMenu, setActiveMenu] = useState<boolean>(true);
   const [screenWidth, setScreenWidth] = useState<number>(0);
   const [isClicked, setIsClicked] = useState(initialState);
-  const [currentColor, setCurrentColor] = useState('blue');
+  const [currentColor, setCurrentColor] = useState('#03C9D7');
+  const [themeSettings, setThemeSettings] = useState(false);
   const [currentMode, setCurrentMode] = useState<'Light' | 'Dark'>('Light');
 
-  const handleModeChange = (mode: string) => {
-    setCurrentMode(mode as 'Light' | 'Dark');
-  }
+  const setMode = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCurrentMode(e.target.value as 'Light' | 'Dark');
+    localStorage.setItem('themeMode', e.target.value);
+  };
+
+  const setColor = (color: string) => {
+    setCurrentColor(color);
+    localStorage.setItem('colorMode', color);
+  };
 
   useEffect(() => {
     const handleResize = () => setScreenWidth(window.innerWidth);
@@ -70,10 +85,10 @@ export const ContextProvider = ({ children }: { children: ReactNode }) => {
       isClicked,
       handleClick,
       screenWidth,
-      currentColor,
-      setCurrentColor,
-      currentMode,
-      setCurrentMode: handleModeChange
+      currentColor, setCurrentColor,
+      currentMode, setCurrentMode,
+      themeSettings, setThemeSettings,
+      setMode, setColor,
     }}>
       {children}
     </StateContext.Provider>

@@ -5,9 +5,10 @@ import { FiSettings } from 'react-icons/fi';
 import React, { useEffect } from 'react';
 import { Sidebar, Navbar } from '../ui';
 import { useStateContext } from '../context/ContextProvider';
+import ThemeSettings from '../ui/ThemeSettings';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  const { activeMenu } = useStateContext();
+  const { activeMenu, themeSettings, currentMode, setCurrentMode, setCurrentColor, setThemeSettings } = useStateContext();
 
   useEffect(() => {
     const bodyDivs = document.querySelectorAll('body > div');
@@ -19,17 +20,30 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     }
   });
 
+  useEffect(() => {
+    const currentThemeColor = localStorage.getItem('colorMode');
+    const currentThemeMode = localStorage.getItem('themeMode');
+    if (currentThemeColor) {
+      setCurrentColor(currentThemeColor);
+    }
+    if (currentThemeMode === 'Light' || currentThemeMode === 'Dark') {
+      setCurrentMode(currentThemeMode as 'Light' | 'Dark');
+    }
+  }, []);
+
 	return (
     <>
 			{/* Setting button at bottom right */}
-      <div className='flex relative dark:bg-main-dark-bg'>
+      <div className='flex relative dark:bg-main-dark-bg' data-theme={currentMode === 'Dark' ? 'dark' : 'light'}>
         <div className='fixed right-4 bottom-4 z-1000'>
           <TooltipComponent
             content='settings'
             position='TopCenter'
           >
             <button
+              type='button'
               className={`text-xl text-white p-3 hover:drop-shadow-xl hover:bg-light-gray bg-blue-600 rounded-full`}
+              onClick={() => setThemeSettings(true)}
             >
               <FiSettings />
             </button>
@@ -59,7 +73,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 					<div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
 						<Navbar />
 					</div>
-					{children}
+					<div>
+					  {themeSettings && (<ThemeSettings />)}
+						{children}
+					</div>
       	</div>
     	</div>
 		</>
