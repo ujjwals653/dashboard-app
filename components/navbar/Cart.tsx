@@ -8,7 +8,7 @@ import Button from './Button';
 import Image from 'next/image';
 
 const Cart = () => {
-  const { currentColor, setIsClicked, initialState} = useStateContext();
+  const { currentColor } = useStateContext();
 
   return (
     <div className="bg-half-transparent w-full fixed nav-item top-0 right-0 ">

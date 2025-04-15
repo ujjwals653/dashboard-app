@@ -21,15 +21,15 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   });
 
   useEffect(() => {
-    const currentThemeColor = localStorage.getItem('colorMode');
-    const currentThemeMode = localStorage.getItem('themeMode');
+    const currentThemeColor = localStorage.getItem("colorMode");
+    const currentThemeMode = localStorage.getItem("themeMode");
     if (currentThemeColor) {
       setCurrentColor(currentThemeColor);
     }
-    if (currentThemeMode === 'Light' || currentThemeMode === 'Dark') {
-      setCurrentMode(currentThemeMode as 'Light' | 'Dark');
+    if (currentThemeMode === "Light" || currentThemeMode === "Dark") {
+      setCurrentMode(currentThemeMode as "Light" | "Dark");
     }
-  }, []);
+  }, [setCurrentColor, setCurrentMode]);
 
 	return (
     <>
